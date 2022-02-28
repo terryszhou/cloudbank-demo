@@ -37,6 +37,7 @@ export const App = () => {
             <Image
               alt={"cloudbank logo"}
               cursor={"pointer"}
+              filter={"drop-shadow(0 0 5px #1e1e1ea3)"}
               src={"/cloudbank.png"}
               width={"20%"}
               transition={"100ms ease-in-out"}
@@ -50,6 +51,14 @@ export const App = () => {
             textShadow={"0 0 5px #6dd4b2"}>
             Cloudbank
           </Heading>
+          <Text
+            fontFamily={"var(--chakra-fonts-mono)"}
+            sx={{
+              background: "-webkit-linear-gradient(#d5ad3f, #b96f2e)",
+              "-webkit-background-clip": "text",
+              "-webkit-text-fill-color": "transparent" }}>
+            by Terry S. Zhou
+          </Text>
         </VStack>
         <Stack
           color={"#d5ad3f"}
@@ -62,7 +71,7 @@ export const App = () => {
           <Text
             fontFamily={"var(--chakra-fonts-mono)"}
             fontSize={"md"}>
-            A <Text as={"span"} color={"#c74031"}>dark</Text> but <Text as={"span"} color={"#6dd4b2"}>vibrant</Text>{` theme inspired by `}
+            {`A dark but vibrant theme inspired by `}
             <Text
               as={"a"}
               color={"rgb(210,217,224)"}
@@ -115,7 +124,7 @@ export const App = () => {
           marginTop={"2%"}
           marginBottom={"10%"}
           padding={"1.5rem"}
-          href={"https://terryszhou.com"}
+          href={"https://www.terryszhou.com"}
           target={"_blank"}
           _focus={{ boxShadow: "none" }}
           _hover={{ backgroundColor: "goldenrod", color: "inherit" }}>
@@ -137,6 +146,7 @@ export const PaletteCircle = ({ color }) => (
     <Circle
       bgColor={color}
       cursor={"pointer"}
+      boxShadow={`0 0 2px ${color}`}
       size={"30px"}
       transition={"100ms ease-in-out"}
       _hover={{
