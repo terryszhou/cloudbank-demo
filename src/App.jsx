@@ -47,12 +47,13 @@ export const App = () => {
             color={"rgb(210,217,224)"}
             fontFamily={"var(--chakra-fonts-mono)"}
             letterSpacing={"0.5rem"}
-            size={"3xl"}
+            fontSize={"5vw"}
             textShadow={"0 0 5px #6dd4b2"}>
             Cloudbank
           </Heading>
           <Text
             fontFamily={"var(--chakra-fonts-mono)"}
+            fontSize={{ base: "sm", lg: "md" }}
             sx={{
               background: "-webkit-linear-gradient(#d5ad3f, #b96f2e)",
               "-webkit-background-clip": "text",
@@ -70,7 +71,7 @@ export const App = () => {
             "-webkit-text-fill-color": "transparent" }}>
           <Text
             fontFamily={"var(--chakra-fonts-mono)"}
-            fontSize={"md"}>
+            fontSize={{ base: "xs", lg: "md" }}>
             {`A dark but vibrant theme inspired by `}
             <Text
               as={"a"}
@@ -87,20 +88,21 @@ export const App = () => {
           </Text>
           <Text
             fontFamily={"var(--chakra-fonts-mono)"}
-            fontSize={"sm"}>
+            fontSize={{ base: "xs", lg: "sm" }}>
             (Note: leather coat, muscle bike, and oversized sword not included)
           </Text>
         </Stack>
         <Image
           borderRadius={"5px"}
-          boxShadow={"dark-lg"}
+          boxShadow={"0 0 10px #6dd4b2"}
+          // boxShadow={"dark-lg"}
           marginY={"5%"}
           src={"/screenshot.png"}
           alt={"screenshot"} />
         <Stack marginY={"4%"} spacing={5}>
           <Text
             fontFamily={"var(--chakra-fonts-mono)"}
-            fontSize={"2xl"}
+            fontSize={{ base: "xl", lg: "2xl"}}
             fontWeight={"bold"}
             sx={{
               background: "-webkit-linear-gradient(#d5ad3f, #b96f2e)",
@@ -120,7 +122,7 @@ export const App = () => {
           cursor={"pointer"}
           filter={"drop-shadow(0 0 5px goldenrod)"}
           fontFamily={"var(--chakra-fonts-mono)"}
-          fontSize={"xl"}
+          fontSize={{ base: "sm", md: "md", lg: "xl" }}
           marginTop={"2%"}
           marginBottom={"10%"}
           padding={"1.5rem"}
@@ -147,7 +149,7 @@ export const PaletteCircle = ({ color }) => (
       bgColor={color}
       cursor={"pointer"}
       boxShadow={`0 0 2px ${color}`}
-      size={"30px"}
+      size={{ base: "15px", lg: "30px" }}
       transition={"100ms ease-in-out"}
       _hover={{
         transform: "scale(1.2)"
