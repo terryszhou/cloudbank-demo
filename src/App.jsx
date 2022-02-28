@@ -1,4 +1,4 @@
-import { Stack, Circle, Tooltip, Flex, Text, Heading, Image, Box, HStack, VStack } from "@chakra-ui/react";
+import { Stack, Button, Link, Circle, Tooltip, Flex, Text, Heading, Image, Box, HStack, VStack } from "@chakra-ui/react";
 import * as React from "react";
 import './App.css';
 
@@ -29,13 +29,19 @@ export const App = () => {
         <VStack
           marginY={"5%"}
           spacing={5}>
-          <Image
-            alt={"cloudbank logo"}
-            cursor={"pointer"}
-            src={"/cloudbank.png"}
-            width={"20%"}
-            transition={"100ms ease-in-out"}
-            _hover={{ transform: "scale(1.1)" }} />
+          <Link
+            display={"flex"}
+            href={"https://github.com/terryszhou/cloudbank-demo"}
+            justifyContent={"center"}
+            target={"_blank"}>
+            <Image
+              alt={"cloudbank logo"}
+              cursor={"pointer"}
+              src={"/cloudbank.png"}
+              width={"20%"}
+              transition={"100ms ease-in-out"}
+              _hover={{ transform: "scale(1.1)" }} />
+          </Link>
           <Heading
             color={"rgb(210,217,224)"}
             fontFamily={"var(--chakra-fonts-mono)"}
@@ -44,7 +50,6 @@ export const App = () => {
             textShadow={"0 0 5px #6dd4b2"}>
             Cloudbank
           </Heading>
-
         </VStack>
         <Stack
           color={"#d5ad3f"}
@@ -98,6 +103,24 @@ export const App = () => {
             {colorArray.map(color => <PaletteCircle color={color} /> )}
           </HStack>
         </Stack>
+        <Button
+          as={"a"}
+          backgroundColor={"transparent"}
+          border={"1px solid goldenrod"}
+          color={"goldenrod"}
+          cursor={"pointer"}
+          filter={"drop-shadow(0 0 5px goldenrod)"}
+          fontFamily={"var(--chakra-fonts-mono)"}
+          fontSize={"xl"}
+          marginTop={"2%"}
+          marginBottom={"10%"}
+          padding={"1.5rem"}
+          href={"https://terryszhou.com"}
+          target={"_blank"}
+          _focus={{ boxShadow: "none" }}
+          _hover={{ backgroundColor: "goldenrod", color: "inherit" }}>
+          See My Other Work
+        </Button>
         <Box
           boxShadow={"0 0 20px 10px #6dd4b2"}
           height={1}
