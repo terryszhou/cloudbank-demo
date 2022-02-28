@@ -1,11 +1,16 @@
-import { Stack, Flex, Text, Heading, Image } from "@chakra-ui/react";
+import { Stack, Circle, Tooltip, Flex, Text, Heading, Image, Box, HStack, VStack } from "@chakra-ui/react";
 import * as React from "react";
 import './App.css';
 
 export const App = () => {
+  const colorArray = [
+    "#1e1e1ea3", "#343434", "#5e5e65", "#b96f2e",
+    "#d5ad3f", "#c74031", "#6dd4b28c", "#6dd4b2", "#b6f69d",
+  ];
+
   return (
     <Flex
-      bgGradient={"linear(to-b, rgb(25,54,53), rgb(11,32,34))"}
+      bgGradient={"linear(to-b, rgb(11,32,34), rgb(25,54,53))"}
       minHeight={"100vh"}
       flexDir={"column"}
       alignItems={"center"}
@@ -15,19 +20,40 @@ export const App = () => {
         alignItems={"center"}
         textAlign={"center"}
         width={"80%"}>
-        <Heading
-          fontFamily={"var(--chakra-fonts-mono)"}
-          marginTop={"10%"}
-          marginBottom={"5%"}
-          letterSpacing={"0.5rem"}
-          size={"3xl"}
+        <Box
+          boxShadow={"0 0 40px 30px #6dd4b2"}
+          height={1}
+          position={"fixed"}
+          top={-1}
+          width={"100%"} />
+        <VStack
+          marginY={"5%"}
+          spacing={5}>
+          <Image
+            alt={"cloudbank logo"}
+            cursor={"pointer"}
+            src={"/cloudbank.png"}
+            width={"20%"}
+            transition={"100ms ease-in-out"}
+            _hover={{ transform: "scale(1.1)" }} />
+          <Heading
+            color={"rgb(210,217,224)"}
+            fontFamily={"var(--chakra-fonts-mono)"}
+            letterSpacing={"0.5rem"}
+            size={"3xl"}
+            textShadow={"0 0 5px #6dd4b2"}>
+            Cloudbank
+          </Heading>
+
+        </VStack>
+        <Stack
+          color={"#d5ad3f"}
+          paddingX={"15%"}
+          spacing={5}
           sx={{
             background: "-webkit-linear-gradient(#d5ad3f, #b96f2e)",
             "-webkit-background-clip": "text",
             "-webkit-text-fill-color": "transparent" }}>
-          Cloudbank
-        </Heading>
-        <Stack spacing={5} paddingX={"15%"} color={"#d5ad3f"} opacity={0.9}>
           <Text
             fontFamily={"var(--chakra-fonts-mono)"}
             fontSize={"md"}>
@@ -39,6 +65,7 @@ export const App = () => {
               href="https://store.steampowered.com/app/237930/Transistor/"
               letterSpacing={"0.2rem"}
               target={"_blank"}
+              textShadow={"0 0 2px #6dd4b2"}
               _hover={{ textDecoration: "underline" }}>
               TRANSISTOR
             </Text>
@@ -56,7 +83,42 @@ export const App = () => {
           marginY={"5%"}
           src={"/screenshot.png"}
           alt={"screenshot"} />
+        <Stack marginY={"4%"} spacing={5}>
+          <Text
+            fontFamily={"var(--chakra-fonts-mono)"}
+            fontSize={"2xl"}
+            fontWeight={"bold"}
+            sx={{
+              background: "-webkit-linear-gradient(#d5ad3f, #b96f2e)",
+              "-webkit-background-clip": "text",
+              "-webkit-text-fill-color": "transparent" }}>
+              Color Palette
+          </Text>
+          <HStack spacing={5}>
+            {colorArray.map(color => <PaletteCircle color={color} /> )}
+          </HStack>
+        </Stack>
+        <Box
+          boxShadow={"0 0 20px 10px #6dd4b2"}
+          height={1}
+          position={"fixed"}
+          bottom={-1}
+          width={"100%"} />
       </Flex>
     </Flex>
   );
 }
+
+export const PaletteCircle = ({ color }) => (
+  <Tooltip hasArrow label={color}>
+    <Circle
+      bgColor={color}
+      cursor={"pointer"}
+      size={"30px"}
+      transition={"100ms ease-in-out"}
+      _hover={{
+        transform: "scale(1.2)"
+      }}
+    />
+  </Tooltip>
+);
