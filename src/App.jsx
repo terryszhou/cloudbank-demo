@@ -100,37 +100,6 @@ export const App = () => {
           marginY={"5%"}
           src={"/screenshot.png"}
           alt={"screenshot"} />
-        <Stack marginY={"4%"} spacing={5} alignItems={"center"}>
-          <Text
-            fontFamily={"var(--chakra-fonts-mono)"}
-            fontSize={{ base: "xl", lg: "2xl"}}
-            fontWeight={"bold"}
-            sx={{
-              background: "-webkit-linear-gradient(#d5ad3f, #b96f2e)",
-              "-webkit-background-clip": "text",
-              "-webkit-text-fill-color": "transparent" }}>
-              Download Color Theme Now!
-          </Text>
-          <Tooltip hasArrow label={"Visual Studio Code"}>
-            <IconButton
-              alt={"Visual Studio Download"}
-              as={"a"}
-              bgColor={"#6dd4b2"}
-              boxShadow={"0 0 5px #6dd4b2"}
-              color={"black"}
-              fontSize={"3xl"}
-              href={"https://www.google.com"}
-              icon={<SiVisualstudiocode />}
-              rounded={"full"}
-              size={"lg"}
-              target={"_blank"}
-              width={"fit-content"}
-              _hover={{
-                bgColor: "white",
-                color: "rgb(58,129,202)"
-              }} />
-          </Tooltip>
-        </Stack>
         <Stack marginY={"4%"} spacing={5}>
           <Text
             fontFamily={"var(--chakra-fonts-mono)"}
@@ -145,6 +114,38 @@ export const App = () => {
           <HStack spacing={5}>
             {colorArray.map(color => <PaletteCircle color={color} /> )}
           </HStack>
+        </Stack>
+        <Stack marginY={"4%"} spacing={5} alignItems={"center"}>
+          <Text
+            fontFamily={"var(--chakra-fonts-mono)"}
+            fontSize={{ base: "xl", lg: "2xl"}}
+            fontWeight={"bold"}
+            sx={{
+              background: "-webkit-linear-gradient(#d5ad3f, #b96f2e)",
+              "-webkit-background-clip": "text",
+              "-webkit-text-fill-color": "transparent" }}>
+              Download Cloudbank Now!
+          </Text>
+          <Tooltip hasArrow label={"Visual Studio Code"}>
+            <IconButton
+              alt={"Visual Studio Download"}
+              as={"a"}
+              bgColor={"#6dd4b2"}
+              boxShadow={"0 0 5px #6dd4b2"}
+              color={"black"}
+              fontSize={"3xl"}
+              href={"https://marketplace.visualstudio.com/items?itemName=terryszhou.cloudbank"}
+              icon={<SiVisualstudiocode />}
+              rounded={"full"}
+              size={"lg"}
+              target={"_blank"}
+              width={"fit-content"}
+              _hover={{
+                bgColor: "white",
+                color: "rgb(58,129,202)",
+                transform: "scale(1.2)",
+              }} />
+          </Tooltip>
         </Stack>
         <Button
           as={"a"}
